@@ -76,7 +76,7 @@ async function getLast12PostsData(profileToScrape, lastScraped) {
 
 async function getPostsData(profileToScrape, lastScraped) {
     let posts = [];
-    const browser = await puppeteer.launch({headless: false});
+    const browser = await puppeteer.launch();
     const page = await browser.newPage();
     await page.goto(`https://www.instagram.com/${profileToScrape}/`);
     // I assumed that the max number of posts will be a round 24 (older than that are not relevant)
